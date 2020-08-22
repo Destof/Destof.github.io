@@ -78,7 +78,7 @@ $("#ctx").mousemove(function(evt) {
       //console.log(newx + ',' + newy);
       $("#graph_coords").html('Mouse Coordinates: ' + newx.toFixed(2) + ',' + newy.toFixed(2));
     }
-  //  return(newx.toFixed(2),newy.toFixed(2))
+  //  return(newx.toFixed(2),newy.toFixed(2));
   });
 
 // $(document).ready(function(){
