@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tele2</title>
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <!-- <link rel="stylesheet" href="css/font.css"> -->
+    <link rel="stylesheet" href="css/Chart.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    hello
+    <section class="promo">
+        <div class="container">
+            <h1 class="promo__title">ВЫБЕРИ СВОЙ ТАРИФ</h1>
+
+            <div class="promo__wrapper">
+
+                <div class="promo__item">
+                    <canvas id="bubble-chart" width="800" height="800"></canvas>
+                    
+                </div>
+
+                <div class="promo__item">
+                    <div class="promo__descr">Х руб</div>
+                    <div class="promo__descr">Y минут Х гигабайтов</div>
+                    <div class="promo__list">СМС</div>
+                </div>
+            </div>
+        </div>  
+    </section>
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
