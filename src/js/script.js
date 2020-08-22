@@ -49,14 +49,15 @@ var myChart = new Chart (document.getElementById("ctx"), {
     }
 
 })
-
+var newy = '';
+var newx = '';
 $("#ctx").mousemove(function(evt) {
     //console.log(evt.offsetX + "," + evt.offsetY);
     var ytop = myChart.chartArea.top;
     var ybottom = myChart.chartArea.bottom;
     var ymin = myChart.scales['y-axis-0'].min;
     var ymax = myChart.scales['y-axis-0'].max;
-    var newy = '';
+
     var showstuff = 0;
     if (evt.offsetY <= ybottom && evt.offsetY >= ytop) {
       newy = Math.abs((evt.offsetY - ytop) / (ybottom - ytop));
@@ -68,7 +69,7 @@ $("#ctx").mousemove(function(evt) {
     var xbottom = myChart.chartArea.right;
     var xmin = myChart.scales['x-axis-0'].min;
     var xmax = myChart.scales['x-axis-0'].max;
-    var newx = '';
+    
     if (evt.offsetX <= xbottom && evt.offsetX >= xtop && showstuff == 1) {
       newx = Math.abs((evt.offsetX - xtop) / (xbottom - xtop));
       newx = newx * (Math.abs(xmax - xmin)) + xmin;
@@ -96,4 +97,14 @@ function addData(chart, label, data) {
         dataset.data.push(data);
     });
     chart.update();
+}
+var arr = [[4,15,30,40] ,[200,500,800,100]]
+function checkRange(newx,newy){
+    for(let i = 0;i<4;i++){
+        for(let k = 0;k<4;k++){
+            if( (newx-arr[1][i])^2 + (newy-arr[2][k])^2 <= R^2 ){
+                console.log(arr[1][i],arr[2][k]);
+            }
+        }
+    }
 }
