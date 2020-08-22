@@ -16,11 +16,13 @@
 
             <div class="promo__wrapper">
 
-                <div class="promo__item">
-                    <canvas id="bubble-chart" width="800" height="800"></canvas>
+                <div class="promo__item hover">
+                    <canvas id="ctx" width="400" height="300"></canvas>
                     
-                </div>
+                    <p id="graph_coords">Mouse Coordinates:</p>
 
+                </div>
+              
                 <div class="promo__item">
                     <div class="promo__descr">Х руб</div>
                     <div class="promo__descr">Y минут Х гигабайтов</div>
@@ -31,6 +33,7 @@
     </section>
     <script src="js/Chart.bundle.js"></script>
     <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
