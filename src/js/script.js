@@ -74,11 +74,14 @@ $("#ctx").mousemove(function(evt) {
       newx = Math.abs((evt.offsetX - xtop) / (xbottom - xtop));
       newx = newx * (Math.abs(xmax - xmin)) + xmin;
     }
+    
     if (newy != '' && newx != '') {
+        checkRange(newx,newy);
       //console.log(newx + ',' + newy);
       $("#graph_coords").html('Mouse Coordinates: ' + newx.toFixed(2) + ',' + newy.toFixed(2));
     }
-  //  return(newx.toFixed(2),newy.toFixed(2));
+    
+    
   });
 
 // $(document).ready(function(){
@@ -99,18 +102,42 @@ function addData(chart, label, data) {
     });
     chart.update();
 }
-var arr = [[4,15,30,40] ,[200,500,800,100]]
-function checkRange(newx,newy){
-    var R = 100;
-    var newx = '';
-    var newy = '' ;
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+}
+//console.log
+var minx = '';
+var miny = '';
+var arr = [[4,15,30,40] ,[200,500,800,1000]]
+function checkRange(x,y){
+    console.log(x,y);
+
+    var min = 9999;
+    var bufx = minx;
+    var bufy = miny;
     for(let i = 0;i<4;i++){
         for(let k = 0;k<4;k++){
-            console.log(newx);
-            if( (newx-arr[0][i])^2 + (newy-arr[1][k])^2 <= R^2 ){
-                console.log(arr[0][i]);
-                console.log(arr[1][k]);
-            }
+            if(  Math.sqrt( Math.pow(x - arr[0][i],2 ) + Math.pow(y - arr[1][k],2) )  < min)
+               {
+                   minx = arr[0][i];
+                   miny = arr[1][k];
+                   min = Math.sqrt(Math.pow(x - arr[0][i],2 ) + Math.pow(y - arr[1][k],2));
+
+               }
         }
     }
+
+    if( minx != bufx && miny != bufy){
+        removeData(myChart);
+        addData(myChart,'A',{x: minx,y: miny,r: 5});
+        minx = 0;
+        miny = 0;
+    }
+    else{
+        
+    }
+  
 }
