@@ -11,61 +11,60 @@
 </head>
 <body>
     <section class="promo">
-        <div class="container">
-            <h1 class="promo__title">ВЫБЕРИ СВОЙ ТАРИФ</h1>
+        
+        <h1 class="promo__title">ВЫБЕРИ СВОЙ ТАРИФ</h1>
 
-            <div class="promo__wrapper">
-                <div class="promo__item hover">
-                    <canvas id="ctx"></canvas>
-                    
-                    <p id="graph_coords">Mouse Coordinates:</p>
+        <div class="promo__wrapper">
+            <div class="promo__item promo__item-bd">
+                <canvas id="ctx"></canvas>
+                
+                <p id="graph_coords">Mouse Coordinates:</p>
 
-                </div>
-              
-                <div class="promo__item">
+            </div>
+            
+            <div class="promo__item">
 
-                    <div class="promo__price">100 ₽/мес</div>
+                <div class="promo__price">100 ₽/мес</div>
 
-                    <div class="promo__descr">
+                <div class="promo__descr">
 
-                        <div class="promo__boxes">
+                    <div class="promo__boxes">
 
-                            <div class="promo__descr" >
-                                Интернет
-                            </div>
-
-                            <div class="promo__plan">
-
-                                <div class="promo__plan__logo">
-                                    <img src="icons/logo_internet.png" alt="logo_internet">
-
-                                </div>
-
-                            </div>
-                    </div>
-
-                        <div class="promo__boxes">
-
-                            <div class="promo__descr">
-                                Минуты
-                            </div>
-
-                            <div class="promo__plan">
-
-                                <div class="promo__plan__logo">
-
-                                    <img src="icons/logo_minute.png" alt="logo_minute">
-                                    
-                                </div>
-
-                            </div>
+                        <div class="promo__text" >
+                            Интернет
                         </div>
 
+                        <div class="promo__plan">
+
+                            <div class="promo__plan__logo">
+                                <img src="icons/logo_internet.png" alt="logo_internet">
+
+                            </div>
+                            <div class="prormo__plan-item" id="internet"><span>гб</span></div>
+                        </div>
+                    </div>
+
+                    <div class="promo__boxes">
+
+                        <div class="promo__text">
+                            Минуты
+                        </div>
+
+                        <div class="promo__plan">
+
+                            <div class="promo__plan__logo">
+
+                                <img src="icons/logo_minute.png" alt="logo_minute">
+                                
+                            </div>
+                            <div class="prormo__plan-item" id="minutes"><span>мин</span></div>
+                        </div>
                     </div>
 
                 </div>
+                <button class="button button-main">ПРОДОЛЖИТЬ</button>
             </div>
-        </div>  
+        </div> 
     </section>
     <script src="js/Chart.bundle.js"></script>
     <script src="js/Chart.bundle.min.js"></script>

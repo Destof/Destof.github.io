@@ -2,16 +2,26 @@ var myChart = new Chart (document.getElementById("ctx"), {
     type: 'bubble',
     data: {
       datasets: [
-        {
-         
+        {   
+            
+            backgroundColor: '#000',
+            borderColor: '#000'
         }]
     },
     options: {
+       
+        
+        animation: false,
         scales: {
+            scaleLabel: {
+                display  : false
+            },
         yAxes: [{ 
-
+    
+        color: '#D5F800',
         ticks: {
-            min: 200,
+            
+            min: 100,
             max:1000
         },
         afterBuildTicks: function(Chart) {    
@@ -27,9 +37,9 @@ var myChart = new Chart (document.getElementById("ctx"), {
         }
         }],
         xAxes: [{ 
-
+        color: '#D5F800',
         ticks: {
-            min: 4,
+            min: 2,
             max:40
         },
         afterBuildTicks: function(Chart) {    
@@ -45,7 +55,20 @@ var myChart = new Chart (document.getElementById("ctx"), {
         }
         
         }]
-      }
+      },
+      onClick: function(e) {
+        var element = this.getElementAtEvent(e);
+
+        // If you click on at least 1 element ...
+        if (element.length > 0) {
+            // Logs it
+            console.log(element[0]);
+            var datasetLabel = this.config.data.datasets[element[0]._datasetIndex].label;
+            let data = this.config.data.datasets[element[0]._datasetIndex].data[element[0]._index];
+            removeData(myChart,'all');
+            addData(myChart,'A',data,'click');
+            }
+        }
     }
 
 })
@@ -95,26 +118,31 @@ $("#ctx").mousemove(function(evt) {
 // 		$('#coords2').html( 'Координаты курсора: (' + x + '; ' + y + ')' );
 // 	});
 // });
-function addData(chart, label, data) {
+function addData(chart, label, data,id = null) {
     chart.data.labels.push(label);
     chart.data.datasets.forEach((dataset) => {
+        data.id = id;
         dataset.data.push(data);
     });
     chart.update();
+
 }
-function removeData(chart) {
+function removeData(chart,id) {
+
     chart.data.labels.pop();
     chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
+       console.log(dataset.data[0],id);
+      if (dataset.data[0] && dataset.data[0].id != id){
+          console.log(dataset.data[0]);
+          dataset.data.pop();}
+        
     });
 }
 //console.log
-var minx = '';
-var miny = '';
+var minx = 0;
+var miny = 0;
 var arr = [[4,15,30,40] ,[200,500,800,1000]]
 function checkRange(x,y){
-    console.log(x,y);
-
     var min = 9999;
     var bufx = minx;
     var bufy = miny;
@@ -130,14 +158,10 @@ function checkRange(x,y){
         }
     }
 
-    if( minx != bufx && miny != bufy){
-        removeData(myChart);
+    if( minx != bufx || miny != bufy){
+        removeData(myChart,'click');
         addData(myChart,'A',{x: minx,y: miny,r: 5});
-        minx = 0;
-        miny = 0;
+        $('#internet').html(minx.toFixed(0) +' гб' );
+        $('#minutes').html(miny.toFixed(0) +' мин' );
     }
-    else{
-        
-    }
-  
 }
