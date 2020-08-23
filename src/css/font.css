@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Tele2TextSans';
+    src: local('Tele2TextSans'),
+        url('../fonts/tele2_textsans-regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tele2TextSans';
+    src: local('Tele2TextSans'),
+        url('../fonts/tele2_textsans-bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}

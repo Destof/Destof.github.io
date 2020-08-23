@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2019 (64-Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="10mm" height="10mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1000 1000"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#3B5998}
+    .fil1 {fill:#FEFEFE;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="Icons_x002f_Sprites_x002f_Facebook">
+   <g id="facebook">
+    <circle id="Oval" class="fil0" cx="496.44" cy="483.1" r="370.41"/>
+    <path id="facebook-icon" class="fil1" d="M578.33 369.28l-30.54 0.01c-23.95,0 -28.58,11.38 -28.58,28.07l0 36.82 57.1 0 -0.02 57.66 -57.07 0 0 147.98 -59.56 0 0 -147.98 -49.79 0 0 -57.66 49.79 0 0 -42.53c0,-49.35 30.15,-76.22 74.17,-76.22l44.5 0.06 0 53.79 0 0z"/>
+   </g>
+  </g>
+ </g>
+</svg>
